@@ -1,0 +1,18 @@
+export const protectedRoutes = [
+  "/login",
+  "/meal-provider",
+  "/mealProvider",
+  "/meal-provider/:page",
+  "/customer",
+  "/customer/:page",
+  "/customer/:path*",
+  "/meal-provider/:path*",
+  "/customer/dashboard",
+  "/mealProvider/dashboard",
+  "/customer/dashboard/manage-order",
+  "/customer/dashboard/track-order",
+  "/mealProvider/dashboard/food/foods/add-food",
+  "/mealProvider/dashboard/food/foods/add-food/:id",
+  "/mealProvider/dashboard/food/foods/manage-food",
+  "/mealProvider/dashboard/food/foods/manage-order",
+];
