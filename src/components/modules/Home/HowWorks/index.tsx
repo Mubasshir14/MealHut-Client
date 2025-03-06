@@ -10,7 +10,7 @@ import img from "../../../../assets/pablo-merchan-montes-Orz90t6o0e4-unsplash.jp
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-16 max-w-screen-xl mx-auto">
+    <section id="how-it-works" className="pb-16 max-w-screen-xl mx-auto">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">

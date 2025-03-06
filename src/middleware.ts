@@ -5,16 +5,28 @@ type Role = keyof typeof roleBasedPrivateRoutes;
 
 const authRoutes = ["/login", "/register"];
 
+// const roleBasedPrivateRoutes = {
+//   customer: [
+//     /^\/customer/,
+//     // /^\/customer\/dashboard/,
+//     // /^\/customer\/dashboard\/.*$/,
+//   ],
+//   mealProvider: [
+//     /^\/mealProvider/,
+//     // /^\/mealProvider\/dashboard/,
+//     // /^\/mealProvider\/dashboard\/food\/.*$/,
+//   ],
+// };
+
 const roleBasedPrivateRoutes = {
-  customer: [/^\/customer/, /^\/meal-provider/, /^\/customer\/dashboard/, /^\/customer\/dashboard\/.*$/],
-  mealProvider: [/^\/mealProvider/, /^\/mealProvider\/dashboard/, /^\/mealProvider\/dashboard\/food\/.*$/],
+  customer: [/^\/customer(\/|$)/, /^\/profile/],
+  mealProvider: [/^\/mealProvider(\/|$)/, /^\/profile/],
 };
 
 export const middleware = async (request: NextRequest) => {
   const { pathname } = request.nextUrl;
 
   const userInfo = await getCurrentUser();
-
   if (!userInfo) {
     if (authRoutes.includes(pathname)) {
       return NextResponse.next();
@@ -41,14 +53,14 @@ export const middleware = async (request: NextRequest) => {
 export const config = {
   matcher: [
     "/login",
-    "/meal-provider",
-    "/mealProvider",
-    "/meal-provider/:page",
     "/customer",
-    "/customer/:page",
+    "/mealProvider",
     "/customer/:path*",
-    "/meal-provider/:path*",
-    "/customer/dashboard", 
-    "/mealProvider/dashboard", 
+    "/mealProvider/:path*",
+    "/profile",
+    // "/customer/dashboard",
+    // "/mealProvider/dashboard",
+    // "/customer/dashboard/:page*",
+    // "/mealProvider/dashboard/:page*",
   ],
 };
