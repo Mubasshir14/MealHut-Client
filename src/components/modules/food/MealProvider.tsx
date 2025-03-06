@@ -17,13 +17,6 @@ import { Textarea } from "@/components/ui/textarea";
 import NMImageUploader from "@/components/ui/core/NMImageUploader";
 import { useState } from "react";
 import ImagePreviewer from "@/components/ui/core/NMImageUploader/ImagePreviewer";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
@@ -112,7 +105,7 @@ export default function MealProvider() {
 
       const res = await createMealProvider(formData);
 
-      console.log(res);
+     
 
       if (res.success) {
         toast.success(res.message, {
@@ -124,7 +117,6 @@ export default function MealProvider() {
     } catch (err: any) {
       console.error(err);
     }
-    console.log("Form submitted with data:", modifiedData);
   };
 
   return (

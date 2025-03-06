@@ -13,49 +13,6 @@ const AddReviewForm = ({ mealId }: { mealId: string }) => {
   const [comment, setComment] = useState("");
   const [hoveredRating, setHoveredRating] = useState(0);
   const { user } = useUser();
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  
-  //   if (!user) {
-  //     toast.error("Please log in before submitting a review.");
-  //     return;
-  //   }
-  
-  //   if (user.role !== "customer") {
-  //     toast.error("You are not allowed to submit a review.");
-  //     return;
-  //   }
-  
-  //   try {
-    
-  //     const formData = new FormData();
-  //     formData.append("userName", user?.name || "");
-  //     formData.append("mealId", mealId);
-  //     formData.append("rating", rating.toString());
-  //     formData.append("comment", comment);
-  
-  //     const reviewData: ReviewData = {
-  //       userName: formData.get("userName") as string,
-  //       mealId: formData.get("mealId") as string,
-  //       rating: parseInt(formData.get("rating") as string, 10),
-  //       comment: formData.get("comment") as string,
-  //     };
-  
-  //     const response = await createReview(reviewData);
-  
-  //     if (response.success) {
-  //       toast.success("Review submitted successfully!");
-  //       setRating(0);
-  //       setComment("");
-  //     } else {
-  //       toast.error(response.message || "Failed to submit review.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error submitting review:", error);
-  //     toast.error("Something went wrong. Please try again.");
-  //   }
-  // };
   
   const handleSubmit = async (e: React.FormEvent) => {
     const toastId = 'creating'
@@ -86,7 +43,6 @@ const AddReviewForm = ({ mealId }: { mealId: string }) => {
         comment,
       };
   
-      console.log("Review Data Sent:", reviewData);  
   
       const response = await createReview(reviewData);
   

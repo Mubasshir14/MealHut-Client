@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import {
@@ -11,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Address() {
   const dispatch = useAppDispatch();
   const shippingAddress = useAppSelector(shippingAddressSelector);
-  console.log(shippingAddress);
+
   const handleShippingAddress = (address: string) => {
     dispatch(updateShippingAddress(address));
   };

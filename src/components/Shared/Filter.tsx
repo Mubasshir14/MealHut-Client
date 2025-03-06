@@ -1,4 +1,5 @@
 "use client";
+// export const dynamic = "force-dynamic";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import { getAllMeals } from "@/services/Meal";
@@ -96,7 +97,7 @@ const Filter = ({ review }: { review: any }) => {
     setCurrentPage(1);
   }, [selectedCategories, selectedRatings, searchText]);
 
-  const groupedReviews = review.reduce(
+  const groupedReviews = review?.reduce(
     (acc: any, rev: { mealId: string; rating: number }) => {
       if (!acc[rev.mealId]) {
         acc[rev.mealId] = [];
@@ -107,7 +108,7 @@ const Filter = ({ review }: { review: any }) => {
     {}
   );
 
-  const mealAverageRatings = Object.keys(groupedReviews).map((mealId) => {
+  const mealAverageRatings = Object.keys(groupedReviews)?.map((mealId) => {
     const ratings = groupedReviews[mealId];
     const totalRating = ratings.reduce(
       (sum: number, rating: number) => sum + rating,
@@ -117,7 +118,7 @@ const Filter = ({ review }: { review: any }) => {
     return { mealId, AVERAGERating };
   });
 
-  const filteredMeals = meals.filter((meal) => {
+  const filteredMeals = meals?.filter((meal) => {
     // Category filter
     const categoryMatch =
       selectedCategories.length === 0 ||
@@ -461,7 +462,7 @@ const Filter = ({ review }: { review: any }) => {
                   <div className="text-white text-xs opacity-80">
                     {meal.portion_size || ""}
                   </div>
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     {[
                       ...Array(
                         Math.round(
@@ -474,7 +475,7 @@ const Filter = ({ review }: { review: any }) => {
                         ★
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>

@@ -41,7 +41,7 @@
     "recharts": "^2.15.1",
     "redux-persist": "^6.0.0",
     "sonner": "^2.0.1",
-    "sweetalert2": "^11.17.2",
+    "sweetalert2": "^11.6.13",
     "swiper": "^11.2.4",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",

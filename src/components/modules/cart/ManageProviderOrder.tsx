@@ -57,7 +57,7 @@ const ManageProviderOrder = () => {
       (a: any, b: any) =>
         new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     );
-console.log(filteredOrders);
+
   const openModal = (order: any) => {
     setSelectedOrder(order);
     setIsModalOpen(true);

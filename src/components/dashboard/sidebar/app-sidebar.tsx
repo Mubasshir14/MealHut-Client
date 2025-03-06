@@ -24,7 +24,7 @@ import { useUser } from "@/components/context/UserContext";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useUser();
-  console.log(user);
+ 
 
   const navMain =
     user?.role === "mealProvider"

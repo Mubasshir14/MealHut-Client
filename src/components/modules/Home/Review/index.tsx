@@ -77,7 +77,7 @@ const ReviewSection = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-green-400">{review.name}</h3>
                   <div className="flex">
-                    {[...Array(review.rating)].map((_, index) => (
+                    {[...Array(review.rating)]?.map((_, index) => (
                       <svg
                         key={index}
                         xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ const ReviewSection = () => {
                         <path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73-1.64 7.03L12 17.27z" />
                       </svg>
                     ))}
-                    {[...Array(5 - review.rating)].map((_, index) => (
+                    {[...Array(5 - review.rating)]?.map((_, index) => (
                       <svg
                         key={index}
                         xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ const ReviewSection = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">{review.text}</p>
+              <p className="text-gray-600 italic">{review?.text}</p>
             </SwiperSlide>
           ))}
         </Swiper>

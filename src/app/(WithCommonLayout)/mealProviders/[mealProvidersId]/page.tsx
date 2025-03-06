@@ -17,7 +17,7 @@ const MealProvidrrsPage = async ({
   const mealsForProviderMeal = allMeals.filter(
     (meal: any) => meal.mealProvider === mealProvidersId
   );
-  console.log(mealsForProviderMeal);
+ 
 
   return (
     <div className="container mx-auto px-4 py-8">

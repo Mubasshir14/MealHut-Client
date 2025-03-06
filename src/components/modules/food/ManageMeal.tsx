@@ -41,7 +41,7 @@ const ManageMeal = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
   const { user } = useUser();
-  console.log(user);
+
 
   useEffect(() => {
     const fetchMeals = async () => {
@@ -84,7 +84,6 @@ const ManageMeal = () => {
 
   const handleDelete = async (mealId: string) => {
     const toastId = 'creating'
-    console.log(mealId);
     const result = await Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",

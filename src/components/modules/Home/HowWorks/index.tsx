@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import img from "../../../../assets/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg";
 
-const HowItWorks = () => {
+const Works = () => {
   return (
     <section id="how-it-works" className="pb-16 max-w-screen-xl mx-auto">
       <div className="container mx-auto px-4">
@@ -108,4 +108,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default Works;

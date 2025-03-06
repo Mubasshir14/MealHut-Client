@@ -25,8 +25,7 @@ const Navbar = () => {
   const router = useRouter();
   const { user, setIsLoading } = useUser();
   const order = useAppSelector(orderSelector);
-  console.log("order in the payment", order);
-  console.log("order in the length", order?.meals?.length);
+
 
   const handleLogOut = () => {
     logout();

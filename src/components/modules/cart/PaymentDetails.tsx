@@ -23,8 +23,6 @@ export default function PaymentDetails() {
   const shippingCost = useAppSelector(shippingCostSelector);
   const grandTotal = useAppSelector(grandTotalSelector);
   const order = useAppSelector(orderSelector);
-  console.log("order in the payment", order);
-  console.log("order in the length", order?.meals?.length);
   const shippingAddress = useAppSelector(shippingAddressSelector);
   const specification = useAppSelector(specificationSelector);
   const cartProducts = useAppSelector(orderedMealsSelector);
@@ -33,43 +31,8 @@ export default function PaymentDetails() {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  // const handleOrder = async () => {
-  //   const orderLoading = toast.loading("Order is being placed");
-  //   try {
-  //     if (!user.user) {
-  //       router.push("/login");
-  //       throw new Error("Please login first.");
-  //     }
 
-  //     if (!shippingAddress) {
-  //       throw new Error("Shipping address is missing");
-  //     }
 
-  //     if (cartProducts.length === 0) {
-  //       throw new Error("Cart is empty, what are you trying to order ??");
-  //     }
-
-  //     const updatedOrder = {
-  //       ...order,
-  //       specification,
-  //       shippingAddress,
-  //     };
-  //     console.log(updatedOrder);
-  //     const res = await createOrder(updatedOrder);
-  //     console.log(res);
-  //     if (res.success) {
-  //       toast.success(res.message, { id: orderLoading });
-  //       dispatch(clearCart());
-  //       router.push("/customer/dashboard");
-  //     }
-
-  //     if (!res.success) {
-  //       toast.error(res.message, { id: orderLoading });
-  //     }
-  //   } catch (error: any) {
-  //     toast.error(error.message, { id: orderLoading });
-  //   }
-  // };
   const handleOrder = async () => {
     const orderLoading = toast.loading("Order is being placed");
 

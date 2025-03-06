@@ -34,8 +34,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
         <Image
           src={images[currentIndex]}
           alt={`Meal image ${currentIndex + 1}`}
-          layout="fill"
-          objectFit="cover"
+          fill style={{ objectFit: "cover" }}
           className="rounded-xl"
           priority
         />

@@ -18,8 +18,6 @@ export const createOrder = async (order: IOrder) => {
     revalidateTag("ORDER");
     return await res.json();
   } catch (error: any) {
-    console.log(error);
-    console.log(error.message);
     return Error(error);
   }
 };
@@ -77,7 +75,7 @@ export const updateOrder = async (id: string, status: string) => {
     const data = await res.json();
     return data;
   } catch (error: any) {
-    console.log(error);
+   
     Error(error.message);
   }
 };

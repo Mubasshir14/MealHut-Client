@@ -21,11 +21,10 @@
 //   const [selectedIds, setSelectedIds] = useState<string[] | []>([]);
 
 //   const handleView = (product: any) => {
-//     console.log("Viewing product:", product);
+//    
 //   };
 
 //   const handleDelete = (productId: string) => {
-//     console.log("Deleting product with ID:", productId);
 //   };
 
 //   const columns: ColumnDef<any>[] = [

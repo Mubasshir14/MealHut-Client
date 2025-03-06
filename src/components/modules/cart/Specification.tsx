@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import {
@@ -11,7 +12,6 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Specification() {
   const dispatch = useAppDispatch();
   const specification = useAppSelector(specificationSelector);
-  console.log(specification);
   const handleSpecification = (specification: string) => {
     dispatch(updateSpecification(specification));
   };

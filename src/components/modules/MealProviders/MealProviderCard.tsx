@@ -16,8 +16,8 @@ const MealProviderCard = ({ mealProvider }: { mealProvider: any }) => {
     >
       <div className="overflow-hidden rounded-lg mb-4">
         <Image
-          src={mealProvider.logo}
-          alt={mealProvider.mealProviderName}
+          src={mealProvider?.logo}
+          alt={mealProvider?.mealProviderName}
           className="object-cover w-full rounded-lg"
           width={320}
           height={128}
@@ -25,11 +25,11 @@ const MealProviderCard = ({ mealProvider }: { mealProvider: any }) => {
       </div>
 
       <h3 className="text-2xl font-semibold text-gray-800 mt-2 text-center">
-        {mealProvider.mealProviderName}
+        {mealProvider?.mealProviderName}
       </h3>
 
       <div className="mt-2">
-        <p className="text-gray-600 text-sm text-center">{mealProvider.address}</p>
+        <p className="text-gray-600 text-sm text-center">{mealProvider?.address}</p>
         
         {/* Rating stars - 5 stars for all providers */}
         <div className="flex justify-center items-center mt-2">
@@ -45,9 +45,9 @@ const MealProviderCard = ({ mealProvider }: { mealProvider: any }) => {
       
       <div className="text-center mt-3">
         <p className="text-gray-600 text-sm">
-          {mealProvider.servicesOffered.length > 100
+          {mealProvider?.servicesOffered.length > 100
             ? `${mealProvider.servicesOffered.slice(0, 100)}...`
-            : mealProvider.servicesOffered}
+            : mealProvider?.servicesOffered}
         </p>
       </div>
 

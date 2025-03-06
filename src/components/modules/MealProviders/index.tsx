@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import { getAllMealProviders } from "@/services/MealProviders";
@@ -7,7 +8,7 @@ import MealProviderCard from "./MealProviderCard";
 
 const MealProvidersComponents = async () => {
   const { data: mealProviders } = await getAllMealProviders();
-  console.log(mealProviders);
+ 
   return (
     <div className="max-w-screen-xl mx-auto py-10">
       <h2 className="text-3xl font-bold text-center text-red-400 mb-6">

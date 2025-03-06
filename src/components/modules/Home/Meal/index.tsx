@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import FoodCard from "@/components/Shared/FoodCard";
 import { Button } from "@/components/ui/button";

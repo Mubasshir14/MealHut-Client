@@ -36,7 +36,7 @@ const MealsDetails = async ({
   const { mealId } = await params;
   const { data: meal } = await getSingleMeal(mealId);
   const { data: review } = await getAllReview();
-  console.log(review);
+
 
   const filteredReviews = review.filter(
     (rev: { mealId: string }) => rev.mealId === mealId
@@ -143,17 +143,17 @@ const MealsDetails = async ({
         <h2 className="text-2xl font-bold mb-6">Customer Reviews</h2>
 
         {filteredReviews.length > 0 ? (
-          filteredReviews.map((rev: any) => (
+          filteredReviews?.map((rev: any) => (
             <div key={rev._id} className="border-b pb-6 last:border-0">
               <div className="flex justify-between items-start">
                 <div>
-                  <div className="font-semibold">{rev.userName}</div>
+                  <div className="font-semibold">{rev?.userName}</div>
                   <div className="flex items-center mt-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
                         key={star}
                         className={`h-4 w-4 ${
-                          star <= rev.rating
+                          star <= rev?.rating
                             ? "text-yellow-400 fill-yellow-400"
                             : "text-gray-300"
                         }`}
@@ -163,7 +163,7 @@ const MealsDetails = async ({
                 </div>
               </div>
               <p className="mt-3 text-gray-700 dark:text-gray-300">
-                {rev.comment}
+                {rev?.comment}
               </p>
             </div>
           ))

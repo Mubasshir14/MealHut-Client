@@ -30,7 +30,6 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
 export default function UpdateFoodForm({ meal }: { meal: any }) {
-  console.log(meal._id);
   const [imageFiles, setImageFiles] = useState<File[] | []>([]);
   const [imagePreview, setImagePreview] = useState<string[] | []>(
     meal?.imageUrls || []
@@ -75,7 +74,6 @@ export default function UpdateFoodForm({ meal }: { meal: any }) {
       ...data,
       price: parseFloat(data.price),
     };
-    console.log("Update Modified", modifiedData);
     const formData = new FormData();
     formData.append("data", JSON.stringify(modifiedData));
 
@@ -84,9 +82,9 @@ export default function UpdateFoodForm({ meal }: { meal: any }) {
     }
 
     try {
-      console.log(meal._id);
+     
       const res = await updatemeal(formData, meal?._id);
-      console.log(res);
+     
       if (res.success) {
         toast.success(res.message,{
           id: toastId

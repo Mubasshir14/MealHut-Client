@@ -9,7 +9,7 @@ import CartProductCard from "./CartProductCard";
 
 export default function CartProducts() {
   const meals = useAppSelector(orderedMealsSelector);
-  console.log(meals);
+
 
   return (
     <div className="border-2 border-white bg-background brightness-105 rounded-md p-10 space-y-5">

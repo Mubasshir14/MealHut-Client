@@ -10,7 +10,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 export default function UserDashboard() {
   const { user } = useUser();
-  console.log(user);
+
 
   const data = {
     labels: ["January", "February", "March", "April", "May", "June"],

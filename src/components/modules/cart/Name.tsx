@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import {
@@ -11,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Name() {
   const dispatch = useAppDispatch();
   const name = useAppSelector(nameSelector);
-  console.log(name);
+
   const handleName = (name: string) => {
     dispatch(updateName(name));
   };

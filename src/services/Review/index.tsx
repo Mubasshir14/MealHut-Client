@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
-import { getValidToken } from "@/lib/verifyToken";
 import { revalidateTag } from "next/cache";
+import { cookies } from "next/headers";
 
 export const createReview = async (data: {
   userName: string;
@@ -10,15 +10,13 @@ export const createReview = async (data: {
   rating: number;
   comment: string;
 }) => {
-  const token = await getValidToken();
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/review`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        Authorization: (await cookies()).get("accessToken")!.value,
       },
-
       body: JSON.stringify(data),
     });
     revalidateTag("Review");
@@ -31,7 +29,7 @@ export const createReview = async (data: {
 export const getSingleReview = async (mealId: string) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/review${mealId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/review/${mealId}`,
       {
         next: {
           tags: ["Review"],
@@ -46,6 +44,10 @@ export const getSingleReview = async (mealId: string) => {
 };
 
 export const getReview = async (mealId: string) => {
+  console.log(
+    "process.env.NEXT_PUBLIC_BASE_API",
+    process.env.NEXT_PUBLIC_BASE_API
+  );
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API}/review/food?mealId=${mealId}`,

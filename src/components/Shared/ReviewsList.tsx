@@ -16,7 +16,6 @@ const ReviewsList = ({
   review: ReviewData[];
 }) => {
   const filteredReviews = review.filter((rev) => rev.mealId === mealId);
-  console.log(filteredReviews);
   return (
     <div className="space-y-6">
       {filteredReviews.length > 0 ? (

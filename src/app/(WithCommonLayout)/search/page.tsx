@@ -4,9 +4,6 @@ import React from 'react';
 
 const SearchPage = async() => {
       const { data: review } = await getAllReview();
-      console.log(review);
-    
-     
     return (
         <div >
             <Filter review={review}/>

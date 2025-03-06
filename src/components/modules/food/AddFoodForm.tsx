@@ -73,7 +73,7 @@ export default function AddFoodForm() {
       ...data,
       price: parseFloat(data.price),
     };
-    console.log("m", modifiedData);
+
 
     const formData = new FormData();
     formData.append("data", JSON.stringify(modifiedData));
@@ -83,7 +83,6 @@ export default function AddFoodForm() {
     }
     try {
       const res = await addMeal(formData);
-      console.log(res);
       if (res.success) {
         toast.success(res.message,{
           id: toastId
