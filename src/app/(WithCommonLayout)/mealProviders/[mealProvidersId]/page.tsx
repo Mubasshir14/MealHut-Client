@@ -20,7 +20,7 @@ const MealProvidrrsPage = async ({
  
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container max-w-screen-xl mx-auto px-4 py-8">
       <div className="max-w-xl mx-auto border-2 border-red-400 bg-green-200/5 p-6 rounded-lg shadow-md">
         <div className="text-center mb-6">
           <Image
